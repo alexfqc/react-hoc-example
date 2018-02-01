@@ -36,4 +36,7 @@ jobs:
       # run tests!
       - run: yarn test
 
+      # run eslint!
+      - run: yarn run lint
+
 
