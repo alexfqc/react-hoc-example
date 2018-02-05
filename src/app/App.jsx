@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import ClientForm from '../client/ClientForm';
-import Dashboard from '../dashboard/Dashboard';
-import Header from '../header/Header';
+import ClientForm from './client/ClientForm';
+import Dashboard from './dashboard/Dashboard';
+import Header from './header/Header';
 
 const mainStyle = {
   float: 'left',
@@ -10,7 +10,7 @@ const mainStyle = {
   marginLeft: '50%',
   marginTop: '1em',
   transform: 'translateX(-50%)',
-  width: '80%'
+  width: '80%',
 };
 
 const App = () => (
