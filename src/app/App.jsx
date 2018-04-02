@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 import ClientForm from './client/ClientForm';
 import Dashboard from './dashboard/Dashboard';
 import Header from './header/Header';
+import injectGlobal from './AppStyle';
 
 const mainStyle = {
   float: 'left',
@@ -12,6 +13,8 @@ const mainStyle = {
   transform: 'translateX(-50%)',
   width: '80%',
 };
+
+injectGlobal();
 
 const App = () => (
   <div>
