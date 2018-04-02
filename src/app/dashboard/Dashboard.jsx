@@ -1,30 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FormHOC from '../form/FormHOC';
+import InputStyled from '../styles/Input';
+import ContainerStyle from './Login';
 
 const Dashboard = ({ form: { user, password }, setForm }) => (
-  <div>
-    <div style={{ width: '100%' }}>
-      <label htmlFor="user">User: </label>
-      <input type="text" name="user" onChange={setForm} />
-    </div>
-    <div style={{ width: '100%' }}>
-      <label htmlFor="password">Password: </label>
-      <input type="password" name="password" onChange={setForm} />
-    </div>
-    <div>
-      <h2>Data</h2>
-      <div>User: {user}</div>
-      <div>Password: {password}</div>
-    </div>
-  </div>
+  <ContainerStyle>
+    <form>
+      <h3>Login to your account</h3>
+      <div>
+        <InputStyled
+          type="text"
+          name="user"
+          onChange={setForm}
+          placeholder="Username"
+        />
+      </div>
+      <div>
+        <InputStyled
+          type="password"
+          name="password"
+          onChange={setForm}
+          placeholder="Password"
+        />
+      </div>
+      <div>
+        <h3>Data</h3>
+        <div>User: <span>{user}</span></div>
+        <div>Password: <span>{password}</span></div>
+      </div>
+    </form>
+  </ContainerStyle>
 );
+
+Dashboard.defaultProps = {
+  form: {
+    user: '',
+    password: '',
+  },
+};
 
 Dashboard.propTypes = {
   form: PropTypes.shape({
-    user: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }).isRequired,
+    user: PropTypes.string,
+    password: PropTypes.string,
+  }),
   setForm: PropTypes.func.isRequired,
 };
 
