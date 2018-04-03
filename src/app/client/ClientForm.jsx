@@ -1,36 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FormHOC from '../form/FormHOC';
+import ContainerStyle from '../styles/Input';
 
 const ClientForm = ({ form: { firstName, lastName, address }, setForm }) => (
-  <div>
-    <div style={{ width: '100%' }}>
-      <label htmlFor="firstName">First Name: </label>
-      <input type="text" name="firstName" onChange={setForm} />
-    </div>
-    <div style={{ width: '100%' }}>
-      <label htmlFor="lastName">Last Name: </label>
-      <input type="text" name="lastName" onChange={setForm} />
-    </div>
-    <div style={{ width: '100%' }}>
-      <label htmlFor="address">Address: </label>
-      <input type="text" name="address" onChange={setForm} />
-    </div>
-    <div>
-      <h2>Data</h2>
-      <div>First Name: {firstName}</div>
-      <div>Last Name: {lastName}</div>
-      <div>Address: {address}</div>
-    </div>
-  </div>
+  <ContainerStyle color="red">
+    <form>
+      <h3>Fill the client form</h3>
+      <div>
+        <input
+          type="text"
+          name="firstName"
+          onChange={setForm}
+          placeholder="First name"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="lastName"
+          onChange={setForm}
+          placeholder="Last name"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="address"
+          onChange={setForm}
+          placeholder="Last name"
+        />
+      </div>
+      <div>
+        <h3>Data</h3>
+        <div>First Name: <span>{firstName}</span></div>
+        <div>Last Name: <span>{lastName}</span></div>
+        <div>Address: <span>{address}</span></div>
+      </div>
+    </form>
+  </ContainerStyle>
 );
+
+ClientForm.defaultProps = {
+  form: {
+    firstName: '',
+    lastName: '',
+    address: '',
+  },
+};
 
 ClientForm.propTypes = {
   form: PropTypes.shape({
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-  }).isRequired,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    address: PropTypes.string,
+  }),
   setForm: PropTypes.func.isRequired,
 };
 
