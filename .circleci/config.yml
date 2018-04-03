@@ -39,4 +39,5 @@ jobs:
       # run eslint!
       - run: yarn run lint
 
-
+      # run stylelint!
+      - run: yarn run lint:css
