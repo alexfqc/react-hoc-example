@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FormHOC from '../form/FormHOC';
-import InputStyled from '../styles/Input';
-import ContainerStyle from './Login';
+import ContainerStyle from '../styles/Input';
 
 const Dashboard = ({ form: { user, password }, setForm }) => (
   <ContainerStyle>
     <form>
       <h3>Login to your account</h3>
       <div>
-        <InputStyled
+        <input
           type="text"
           name="user"
           onChange={setForm}
@@ -17,7 +16,7 @@ const Dashboard = ({ form: { user, password }, setForm }) => (
         />
       </div>
       <div>
-        <InputStyled
+        <input
           type="password"
           name="password"
           onChange={setForm}
