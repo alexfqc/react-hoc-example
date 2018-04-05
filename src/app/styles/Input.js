@@ -26,7 +26,7 @@ export default styled.div.attrs({
     box-sizing: border-box;
     margin: 0 0 20px;
     padding: 10px 15px;
-    transition: 0.3s ease;
+    transition: .3s ease;
     width: 100%;
 
     &:focus {
