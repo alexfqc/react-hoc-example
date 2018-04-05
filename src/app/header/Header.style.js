@@ -9,6 +9,7 @@ export default styled.header.attrs({
   height: 300px;
   position: relative;
   width: 100%;
+  transition: .3s ease;
 
   h1 {
     font-size: 42px;

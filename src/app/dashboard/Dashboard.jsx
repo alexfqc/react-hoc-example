@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withRouter } from 'react-router';
-import FormHOC from '../form/FormHOC';
-import ThemeHOC from '../theme/ThemeHOC';
+import Form from '../form/Form';
+import Theme from '../theme/Theme';
 import ContainerStyle from '../styles/Input';
 
 const Dashboard = ({ color, form: { user, password }, setForm }) => (
@@ -53,6 +53,6 @@ Dashboard.propTypes = {
 
 export default compose(
   withRouter,
-  ThemeHOC,
-  FormHOC,
+  Theme,
+  Form,
 )(Dashboard);

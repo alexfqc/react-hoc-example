@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import ThemeHOC from '../theme/ThemeHOC';
+import Theme from '../theme/Theme';
 import HeaderStyle from './Header.style';
 
 const headerRouters = [
@@ -40,5 +40,5 @@ Header.propTypes = {
 
 export default compose(
   withRouter,
-  ThemeHOC,
+  Theme,
 )(Header);

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withRouter } from 'react-router';
-import FormHOC from '../form/FormHOC';
-import ThemeHOC from '../theme/ThemeHOC';
+import Form from '../form/Form';
+import Theme from '../theme/Theme';
 import ContainerStyle from '../styles/Input';
 
 const ClientForm = ({ color, form: { firstName, lastName, address }, setForm }) => (
@@ -64,6 +64,6 @@ ClientForm.propTypes = {
 
 export default compose(
   withRouter,
-  ThemeHOC,
-  FormHOC,
+  Theme,
+  Form,
 )(ClientForm);
