@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { compose } from 'recompose';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import ThemeHOC from '../theme/ThemeHOC';
@@ -37,4 +38,7 @@ Header.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-export default withRouter(ThemeHOC(Header));
+export default compose(
+  withRouter,
+  ThemeHOC,
+)(Header);

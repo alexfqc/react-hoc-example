@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { compose } from 'recompose';
 import { withRouter } from 'react-router';
 import FormHOC from '../form/FormHOC';
 import ThemeHOC from '../theme/ThemeHOC';
@@ -50,4 +51,8 @@ Dashboard.propTypes = {
   setForm: PropTypes.func.isRequired,
 };
 
-export default withRouter(ThemeHOC(FormHOC(Dashboard)));
+export default compose(
+  withRouter,
+  ThemeHOC,
+  FormHOC,
+)(Dashboard);
