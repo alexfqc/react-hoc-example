@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import FormHOC from '../form/FormHOC';
+import ThemeHOC from '../theme/ThemeHOC';
 import ContainerStyle from '../styles/Input';
 
-const Dashboard = ({ form: { user, password }, setForm }) => (
-  <ContainerStyle>
+const Dashboard = ({ color, form: { user, password }, setForm }) => (
+  <ContainerStyle color={color}>
     <form>
       <h3>Login to your account</h3>
       <div>
@@ -40,6 +42,7 @@ Dashboard.defaultProps = {
 };
 
 Dashboard.propTypes = {
+  color: PropTypes.string.isRequired,
   form: PropTypes.shape({
     user: PropTypes.string,
     password: PropTypes.string,
@@ -47,4 +50,4 @@ Dashboard.propTypes = {
   setForm: PropTypes.func.isRequired,
 };
 
-export default FormHOC(Dashboard);
+export default withRouter(ThemeHOC(FormHOC(Dashboard)));

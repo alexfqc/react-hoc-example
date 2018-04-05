@@ -33,22 +33,27 @@ export default styled.header.attrs({
   }
 
   li {
-    box-sizing: border-box;
-    display: inline-block;
-    float: left
+    float: left;
     list-style-type: none;
-    padding: 0 15px;
     position: relative;
+    width: 80px;
   }
 
   a {
     color: ${props => props.color};
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
+    float: left;
     font-size: 100%;
     font-weight: bold;
+    height: 100%;
+    padding: 0 15px;
+    position: relative;
+    text-align: center;
     text-decoration: none;
     vertical-align: baseline;
+    width: 100%;
   }
 `;

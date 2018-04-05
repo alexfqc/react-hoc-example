@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import FormHOC from '../form/FormHOC';
+import ThemeHOC from '../theme/ThemeHOC';
 import ContainerStyle from '../styles/Input';
 
-const ClientForm = ({ form: { firstName, lastName, address }, setForm }) => (
-  <ContainerStyle color="red">
+const ClientForm = ({ color, form: { firstName, lastName, address }, setForm }) => (
+  <ContainerStyle color={color}>
     <form>
       <h3>Fill the client form</h3>
       <div>
@@ -50,6 +52,7 @@ ClientForm.defaultProps = {
 };
 
 ClientForm.propTypes = {
+  color: PropTypes.string.isRequired,
   form: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
@@ -58,4 +61,4 @@ ClientForm.propTypes = {
   setForm: PropTypes.func.isRequired,
 };
 
-export default FormHOC(ClientForm);
+export default withRouter(ThemeHOC(FormHOC(ClientForm)));
