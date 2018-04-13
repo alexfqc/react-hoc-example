@@ -8,7 +8,7 @@ import HeaderStyle from './Header.style';
 
 const headerRouters = [
   { id: 0, url: '/', name: 'Home' },
-  { id: 1, url: '/user', name: 'User' },
+  { id: 1, url: '/user', name: 'Client' },
 ];
 
 const Header = ({ color }) => (

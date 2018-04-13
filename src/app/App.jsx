@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import ClientForm from './client/ClientForm';
 import Dashboard from './dashboard/Dashboard';
 import Header from './header/Header';
-import injectGlobal from './AppStyle';
+import injectGlobal from './App.style';
 
 const mainStyle = {
   float: 'left',
