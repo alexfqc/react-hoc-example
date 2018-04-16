@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
-import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import Theme from '../theme/Theme';
 import HeaderStyle from './Header.style';
@@ -38,7 +36,4 @@ Header.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-export default compose(
-  withRouter,
-  Theme,
-)(Header);
+export default Theme(Header);
