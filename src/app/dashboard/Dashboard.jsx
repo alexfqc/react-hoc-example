@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
-import { withRouter } from 'react-router';
 import Form from '../form/Form';
 import Theme from '../theme/Theme';
 import ContainerStyle from '../styles/Input';
@@ -52,7 +51,6 @@ Dashboard.propTypes = {
 };
 
 export default compose(
-  withRouter,
   Theme,
   Form,
 )(Dashboard);
